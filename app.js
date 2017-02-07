@@ -30,7 +30,7 @@ client.stream('statuses/filter', streamParams, function(stream){
   stream.on('data', function(data) {
     var tweet = {
       author: data['user']['name'],
-      avatar: data['user']['profile_image_url'],
+      avatar: data['user']['profile_image_url'].replace('normal', '400x400'),
       text: data['text'],
       date: data['created_at']
     };
